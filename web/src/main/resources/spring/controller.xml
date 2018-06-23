@@ -4,7 +4,8 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!--配置本地化 当前来看没啥用-->
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.FixedLocaleResolver" c:locale="zh_CN"/>
-
+    <!--REST风格的URL，即URL不带.html等后缀-->
     <mvc:default-servlet-handler default-servlet-name="default"/>
 </beans>
