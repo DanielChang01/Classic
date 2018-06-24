@@ -1,0 +1,32 @@
+DROP table if exists `classic`.`book_detail_1001`;
+
+CREATE TABLE `classic`.`book_detail_1001`(
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+    `book_name_c_n` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '书名',
+    `inner_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '同名书籍内部编号',
+    `author` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '作者',
+    `translator` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '译者',
+    `publishing_house` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '出版社',
+    `publish_date` DATETIME NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '出版日期',
+    `page_number` INT(11) NOT NULL DEFAULT -1 COMMENT '页数',
+    `binding_and_layout` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '装帧',
+    `price` DECIMAL(20,4) NOT NULL DEFAULT -1 COMMENT '价格',
+    `i_s_b_n` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'ISBN',
+    `score` DECIMAL(13,4) NOT NULL DEFAULT -1 COMMENT '评分',
+    `category_code` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '分类编码',
+    `category_name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '分裂名称',
+    `big_category_code` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '大分类',
+    `big_category_name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '大分类',
+    `middle_category_code` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '中分类',
+    `middle_category_name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '中分类',
+    `small_category_code` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '小分类',
+    `small_category_name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '小分类',
+    `remark` TEXT NOT NULL DEFAULT '' COMMENT '备注',
+    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uniq_name_inner_id` (`book_name_c_n`,`inner_id`),
+    KEY `idx_book_name` (`book_name_c_n`),
+    KEY `idx_inner_id` (`inner_id`),
+    KEY `idx_date` (`publish_date`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT '图书明细表';

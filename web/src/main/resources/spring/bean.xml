@@ -3,8 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--扫描注解,为了启动快点，尽量不要配置全扫-->
+
     <!--<context:component-scan base-package="com.daniel"/>-->
-    <context:component-scan base-package="com.daniel.biz"/>
-    <context:component-scan base-package="com.daniel.controller"/>
+    <context:component-scan base-package="com.daniel.*"/>
+    <!--<context:component-scan base-package="com.daniel.controller"/>-->
+    <!--<context:component-scan base-packacom.daniel.service.mapperspers"/>-->
+    <!--<context:component-scan base-package="com.daniel.service.impl"/>-->
 </beans>

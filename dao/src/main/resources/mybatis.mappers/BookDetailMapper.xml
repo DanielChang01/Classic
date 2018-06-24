@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.daniel.service.dao.BookDetailMapper">
+
+    <resultMap id="AllColumnMap" type="com.daniel.beans.BookDetailBO">
+        <result column="id" property="id"/>
+        <result column="book_name_c_n" property="bookNameCN"/>
+        <result column="inner_id" property="innerId"/>
+        <result column="author" property="author"/>
+        <result column="translator" property="translator"/>
+        <result column="publishing_house" property="publishingHouse"/>
+        <result column="publish_date" property="publishDate"/>
+        <result column="page_number" property="pageNumber"/>
+        <result column="binding_and_layout" property="bindingAndLayout"/>
+        <result column="price" property="price"/>
+        <result column="i_s_b_n" property="ISBN"/>
+        <result column="score" property="score"/>
+        <result column="category_code" property="categoryCode"/>
+        <result column="category_name" property="categoryName"/>
+        <result column="big_category_code" property="bigCategoryCode"/>
+        <result column="big_category_name" property="bigCategoryName"/>
+        <result column="middle_category_code" property="middleCategoryCode"/>
+        <result column="middle_category_name" property="middleCategoryName"/>
+        <result column="small_category_code" property="smallCategoryCode"/>
+        <result column="small_category_name" property="smallCategoryName"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `book_name_c_n`,
+        `inner_id`,
+        `author`,
+        `translator`,
+        `publishing_house`,
+        `publish_date`,
+        `page_number`,
+        `binding_and_layout`,
+        `price`,
+        `i_s_b_n`,
+        `score`,
+        `category_code`,
+        `category_name`,
+        `big_category_code`,
+        `big_category_name`,
+        `middle_category_code`,
+        `middle_category_name`,
+        `small_category_code`,
+        `small_category_name`,
+        `remark`,
+        `create_time`,
+        `update_time`
+    </sql>
+
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="item.id">
+        INSERT INTO book_detail_1001
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="item.id!=null"> `id`,</if>
+            <if test="item.bookNameCN!=null"> `book_name_c_n`,</if>
+            <if test="item.innerId!=null"> `inner_id`,</if>
+            <if test="item.author!=null"> `author`,</if>
+            <if test="item.translator!=null"> `translator`,</if>
+            <if test="item.publishingHouse!=null"> `publishing_house`,</if>
+            <if test="item.publishDate!=null"> `publish_date`,</if>
+            <if test="item.pageNumber!=null"> `page_number`,</if>
+            <if test="item.bindingAndLayout!=null"> `binding_and_layout`,</if>
+            <if test="item.price!=null"> `price`,</if>
+            <if test="item.ISBN!=null"> `i_s_b_n`,</if>
+            <if test="item.score!=null"> `score`,</if>
+            <if test="item.categoryCode!=null"> `category_code`,</if>
+            <if test="item.categoryName!=null"> `category_name`,</if>
+            <if test="item.bigCategoryCode!=null"> `big_category_code`,</if>
+            <if test="item.bigCategoryName!=null"> `big_category_name`,</if>
+            <if test="item.middleCategoryCode!=null"> `middle_category_code`,</if>
+            <if test="item.middleCategoryName!=null"> `middle_category_name`,</if>
+            <if test="item.smallCategoryCode!=null"> `small_category_code`,</if>
+            <if test="item.smallCategoryName!=null"> `small_category_name`,</if>
+            <if test="item.remark!=null"> `remark`,</if>
+            <if test="item.createTime!=null"> `create_time`,</if>
+            <if test="item.updateTime!=null"> `update_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="item.id!=null">#{item.id},</if>
+            <if test="item.bookNameCN!=null">#{item.bookNameCN},</if>
+            <if test="item.innerId!=null">#{item.innerId},</if>
+            <if test="item.author!=null">#{item.author},</if>
+            <if test="item.translator!=null">#{item.translator},</if>
+            <if test="item.publishingHouse!=null">#{item.publishingHouse},</if>
+            <if test="item.publishDate!=null">#{item.publishDate},</if>
+            <if test="item.pageNumber!=null">#{item.pageNumber},</if>
+            <if test="item.bindingAndLayout!=null">#{item.bindingAndLayout},</if>
+            <if test="item.price!=null">#{item.price},</if>
+            <if test="item.ISBN!=null">#{item.ISBN},</if>
+            <if test="item.score!=null">#{item.score},</if>
+            <if test="item.categoryCode!=null">#{item.categoryCode},</if>
+            <if test="item.categoryName!=null">#{item.categoryName},</if>
+            <if test="item.bigCategoryCode!=null">#{item.bigCategoryCode},</if>
+            <if test="item.bigCategoryName!=null">#{item.bigCategoryName},</if>
+            <if test="item.middleCategoryCode!=null">#{item.middleCategoryCode},</if>
+            <if test="item.middleCategoryName!=null">#{item.middleCategoryName},</if>
+            <if test="item.smallCategoryCode!=null">#{item.smallCategoryCode},</if>
+            <if test="item.smallCategoryName!=null">#{item.smallCategoryName},</if>
+            <if test="item.remark!=null">#{item.remark},</if>
+            <if test="item.createTime!=null">now(),</if>
+            <if test="item.updateTime!=null">now(),</if>
+        </trim>
+    </insert>
+
+    <insert id="insertList">
+        INSERT INTO book_detail_1001 (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="items" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.bookNameCN},
+            #{item.innerId},
+            #{item.author},
+            #{item.translator},
+            #{item.publishingHouse},
+            #{item.publishDate},
+            #{item.pageNumber},
+            #{item.bindingAndLayout},
+            #{item.price},
+            #{item.ISBN},
+            #{item.score},
+            #{item.categoryCode},
+            #{item.categoryName},
+            #{item.bigCategoryCode},
+            #{item.bigCategoryName},
+            #{item.middleCategoryCode},
+            #{item.middleCategoryName},
+            #{item.smallCategoryCode},
+            #{item.smallCategoryName},
+            #{item.remark},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+
+    <update id="update">
+        UPDATE book_detail_1001
+        <set>
+            <if test="item.id != null"> `id` = #{item.id}, </if>
+            <if test="item.bookNameCN != null"> `book_name_c_n` = #{item.bookNameCN}, </if>
+            <if test="item.innerId != null"> `inner_id` = #{item.innerId}, </if>
+            <if test="item.author != null"> `author` = #{item.author}, </if>
+            <if test="item.translator != null"> `translator` = #{item.translator}, </if>
+            <if test="item.publishingHouse != null"> `publishing_house` = #{item.publishingHouse}, </if>
+            <if test="item.publishDate != null"> `publish_date` = #{item.publishDate}, </if>
+            <if test="item.pageNumber != null"> `page_number` = #{item.pageNumber}, </if>
+            <if test="item.bindingAndLayout != null"> `binding_and_layout` = #{item.bindingAndLayout}, </if>
+            <if test="item.price != null"> `price` = #{item.price}, </if>
+            <if test="item.ISBN != null"> `i_s_b_n` = #{item.ISBN}, </if>
+            <if test="item.score != null"> `score` = #{item.score}, </if>
+            <if test="item.categoryCode != null"> `category_code` = #{item.categoryCode}, </if>
+            <if test="item.categoryName != null"> `category_name` = #{item.categoryName}, </if>
+            <if test="item.bigCategoryCode != null"> `big_category_code` = #{item.bigCategoryCode}, </if>
+            <if test="item.bigCategoryName != null"> `big_category_name` = #{item.bigCategoryName}, </if>
+            <if test="item.middleCategoryCode != null"> `middle_category_code` = #{item.middleCategoryCode}, </if>
+            <if test="item.middleCategoryName != null"> `middle_category_name` = #{item.middleCategoryName}, </if>
+            <if test="item.smallCategoryCode != null"> `small_category_code` = #{item.smallCategoryCode}, </if>
+            <if test="item.smallCategoryName != null"> `small_category_name` = #{item.smallCategoryName}, </if>
+            <if test="item.remark != null"> `remark` = #{item.remark}, </if>
+            <if test="item.createTime != null"> `create_time` = #{item.createTime}, </if>
+            <if test="item.updateTime != null"> `update_time` = #{item.updateTime} </if>
+        </set>
+        WHERE id = #{item.id}
+    </update>
+
+    <sql id="whereCommon">
+        <where>
+            <if test="bookName != null and bookName != ''">
+                `book_name_c_n` = #{bookName}
+            </if>
+            <if test="startPub != null and endPub != null">
+                and `publish_date` BETWEEN #{startPub} AND #{endPub}
+            </if>
+        </where>
+    </sql>
+
+    <select id="queryDetailInfo" resultMap="AllColumnMap">
+        SELECT
+        <include refid="all_column"/>
+        FROM book_detail_1001
+        <include refid="whereCommon"/>
+        limit #{limit} offset #{offset}
+    </select>
+
+    <select id="count" resultType="Integer">
+        SELECT count(1)
+        FROM book_detail_1001
+        <include refid="whereCommon"/>
+    </select>
+</mapper>
+
