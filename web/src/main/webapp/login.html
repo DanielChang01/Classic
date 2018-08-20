@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	  <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"
+			  rel="stylesheet">
+	  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+	  <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	  <script src="http://cdn.bootcss.com/angular.js/1.4.12/angular.min.js"></script>
+	  <script src="js/config.js"></script>
+	  <script src="js/login.js"></script>
+  </head>
+  <body ng-app="loginApp" ng-controller="loginController">
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form">
+				<div id="rebootAlert01" class="alert alert-dismissable">{{showContent}}</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Email address
+					</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" ng-model="emailaddr">
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+						Password
+					</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" ng-model="Password">
+				</div>
+				<button type="submit" class="btn btn-default" ng-click="submitLogin()">
+					Submit
+				</button>
+
+			</form>
+		</div>
+	</div>
+</div>
+<!--<script>-->
+    <!--var app = angular.module('loginApp', []);-->
+    <!--app.value("baseUrl", "http://" + controlHostAndPort);-->
+    <!--app.controller(-->
+        <!--'loginController',-->
+        <!--function($scope, $http, baseUrl) {-->
+            <!--$scope.showContent=baseUrl;-->
+            <!--$scope.submitLogin = function(){-->
+                <!--var email = $scope.emailaddr;-->
+                <!--var password = $scope.Password;-->
+
+                <!--var loginUrl = baseUrl+"/run/daniel/login/sign_in";-->
+
+                <!--var searchParam = {-->
+                    <!--"emailAddr":email,-->
+                    <!--"password":password-->
+                <!--};-->
+                <!--$scope.showContent=loginUrl;-->
+                <!--$http.-->
+                <!--get(loginUrl,{params:searchParam})-->
+					<!--.then(function(result){$scope.showContent=result.data}, function(result){$scope.showContent=result.status});-->
+
+            <!--}-->
+        <!--});-->
+<!--</script>-->
+
+  </body>
+</html>

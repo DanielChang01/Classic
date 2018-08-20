@@ -24,6 +24,16 @@
     </servlet-mapping>
 
 
+    <!--记录请求日志-->
+    <!--<filter>-->
+        <!--<filter-name>requestLog</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>requestLog</filter-name>-->
+        <!--<url-pattern>/daniel/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
     <!-- 编码过滤器 -->
     <!--<filter>-->
         <!--<filter-name>encode</filter-name>-->
